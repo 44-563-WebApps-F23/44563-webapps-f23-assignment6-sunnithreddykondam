@@ -11,17 +11,28 @@
     <input type="checkbox" id="cb1_shared" name="topping1" value="True" checked>
     <label for="cb1_shared">Shares Cabin</label></br>
   
-    <input type="checkbox" id="cb1_breakfast" name="topping2" value="True">
+    <input type="checkbox" id="cb1_breakfast" name="topping2" value="True" checked>
     <label for="cb1_breakfast">Breakfast</label></br>
   
-    <input type="checkbox" id="cb1_pool" name="topping3" value="False" checked>
+    <input type="checkbox" id="cb1_pool" name="topping3" value="True" >
     <label for="cb1_pool">Pool Pass</label></br>
 
     <input type="button" onclick="selectCruise()" value="Select a cruise">
   </form>
 
+  <form>
+    <br>
+    <label for="form1_property">Enter the number of days </label>
+    <input type ="text" id="form1_property" name="form1_property" value="days"> <br><br>
+
+    <label for="form1_price">Enter price </label>
+    <input type ="text" id="form1_price" name="form1_price" autofocus> <br><br>
+
+    <input type="button" onclick="updateCruise()" value="Update the cruise">
+</form>
  
-<p id="result"></p>
+
+<p id="resultString"></p>
 <script>
 let my_cruise = {} 
 function selectCruise() {
@@ -35,7 +46,15 @@ function selectCruise() {
     my_cruise.isbreakfast = breakfast;
     my_cruise.ispool = pool;
    
-    document.getElementById("result").innerHTML=Object.values(my_cruise)
+    document.getElementById("resultString").innerHTML=Object.values(my_cruise)
+}
+function updateCruise() {
+    let days = document.getElementById("form1_property").value;
+    let price = parseFloat(document.getElementById("form1_price").value)
+    my_cruise["day"] = days;
+    my_cruise["price"] = price;
+    
+    document.getElementById("resultString").innerHTML=Object.values(my_cruise)
 }
 
 </script>
