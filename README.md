@@ -2,6 +2,4 @@
 # WebApps-F23-Assignment-6
 Introduction to Java Script and DOM
 
-Hosted at [!Author](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/author.html)
-Hosted at [!Tips](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/tips.html)
-Hosted at [!cruise](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/cruise.html)
+Hosted at [Author](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/author.html) and [Tips](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/tips.html) and [cruise](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-sunnithreddykondam/cruise.html)
