@@ -26,25 +26,45 @@
   <body>
     <h1>Author entry Sunnith Reddy</h1>
     <h2>Getting input</h2>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="form1_secret-author"
+          >The hidden author name</label
+        >
 
-    <form>
-      <label for="form1_secret-author">The hidden author name</label>
-      <input
-        type="password"
-        id="form1_secret-author"
-        name="form1_secret-author"
-        value="Dickens"
-      />
-      <br /><br />
-
-      <label for="form1_author">Guess the author</label>
-      <input type="text" id="form1_author" name="form1_author" autofocus />
-      <br /><br />
-
-      <input type="button" onclick="checkAuthor()" value="Check the guess" />
+        <div class="col-sm-10">
+          <input
+            type="password"
+            id="form1_secret-author"
+            name="form1_secret-author"
+            value="Dickens"
+          />
+          <br /><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="form1_author"
+          >Guess the author</label
+        >
+        <div class="col-sm-10"></div>
+        <input type="text" id="form1_author" name="form1_author" autofocus />
+        <br /><br />
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input
+            class="btn btn-primary"
+            id="check"
+            type="button"
+            onclick="checkAuthor()"
+            value="Check the guess"
+          />
+        </div>
+      </div>
     </form>
-
+    <br />
     <p id="result"></p>
+    <div id="wrong"></div>
     <div class="text-center">
       <img
         id="city"
@@ -66,12 +86,23 @@
         if (author == guess) {
           good++;
           alert("You got it right");
-          result.innerHTML = "count: " + good;
+          result.innerHTML = "success count: " + good;
         } else {
           oops++;
-          alert("Sorry its wrong");
-          result.innerHTML = "oops: " + oops;
+          if (oops == 7) {
+            document
+              .getElementById("check")
+              .setAttribute("onClick", "wrongGuess()");
+          } else {
+            alert("Sorry");
+            wrong.innerHTML = "wrong guess count : " + oops;
+          }
         }
+      }
+      function wrongGuess() {
+        alert("Sorry, ran out of guesses");
+        wrong.innerHTML =
+          "You have reached the limit of wrong guesses: " + oops;
       }
 
       let useImage = 1;
